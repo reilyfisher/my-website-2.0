@@ -3,7 +3,7 @@
 <head>
     <!-- Load Comic Sans for desktop and Roboto for mobile -->
     <link href="https://fonts.cdnfonts.com/css/comic-sans-ms" rel="stylesheet">
-    <link href="styles.css?v=2.1" rel="stylesheet">
+    <link href="styles.css?v=2." rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reily Fisher - Social Links</title>
@@ -186,6 +186,13 @@
 
         .nav-links a:hover {
             opacity: 0.8;
+        }
+        /* Heartbeat logo for desktop */
+        @media (min-width: 769px) {
+        .heartbeat-logo img {
+            width: 25vw; /* Set the width for desktop viewports to 20% of the viewport width */
+            height: auto; /* Maintain the aspect ratio */
+        }
         }
 
         /* Media queries for mobile */
