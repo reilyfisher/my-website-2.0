@@ -210,18 +210,22 @@
             }
         
             .heartbeat-logo {
-        position: fixed; /* Fixed positioning relative to the screen */
-        top: 70px; /* Set distance from the top */
-        left: 50%; /* Center horizontally relative to the screen */
-        transform: translateX(-50%); /* Center by moving left by half its width */
-        width: 60vw; /* Set the width to 60% of the viewport width */
-        z-index: 999; /* Keep it above other elements */
-    }
+                position: fixed; /* Fixed positioning relative to the screen */
+                top: 140px; /* Set distance from the top */
+                left: 50%; /* Center horizontally relative to the screen */
+                transform: translateX(-50%); /* Center by moving left by half its width */
+                width: 60vw; /* Set the width to 60% of the viewport width */
+                z-index: 999; /* Keep it above other elements */
+                background: rgba(255, 255, 255, 0.12); /* Semi-transparent white oval */
+                padding: 15px 40px; /* Create padding for the oval shape */
+                border-radius: 50px; /* Make the background oval-shaped */
 
-    .heartbeat-logo img {
-        width: 100%; /* Make the image fill the container width */
-        height: auto; /* Maintain aspect ratio */
-    }
+            }
+        
+            .heartbeat-logo img {
+                width: 100%; /* Make the image fill the container width */
+                height: auto; /* Maintain aspect ratio */
+            }
         
             /* Stack the columns vertically for mobile */
             .columns {
