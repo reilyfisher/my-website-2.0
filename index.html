@@ -210,23 +210,25 @@
             }
         
             .heartbeat-logo {
-                position: fixed; /* Make the logo fixed relative to the screen */
-                top: 70px; /* Set distance of 70px from the top of the viewport */
+                position: fixed; /* Fixed positioning relative to the screen */
+                top: 70px; /* Distance from the top of the screen */
                 left: 50%; /* Center horizontally relative to the screen */
-                transform: translateX(-50%); /* Move horizontally to the center */
+                transform: translateX(-50%); /* Translate left by 50% of the container width to truly center */
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                background: rgba(255, 255, 255, 0.12); /* More visible transparent white oval */
-                padding: 15px 40px; /* Adjust padding to create an oval shape */
+                width: auto; /* Allow width to be automatically determined by content */
+                max-width: 90%; /* Prevent it from getting too large on small screens */
+                background: rgba(255, 255, 255, 0.12); /* Semi-transparent white oval */
+                padding: 15px 40px; /* Create an oval shape */
                 border-radius: 50px; /* Make the background oval-shaped */
                 z-index: 999; /* Ensure the logo stays above other elements */
             }
         
             .heartbeat-logo img {
-                width: 150px; /* Increase the logo width to a larger size */
+                width: 200px; /* Explicitly set a larger width */
+                height: auto; /* Maintain aspect ratio */
             }
-        }
         
             /* Stack the columns vertically for mobile */
             .columns {
