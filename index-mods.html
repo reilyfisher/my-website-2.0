@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Load Comic Sans for desktop and Roboto for mobile -->
+    <link href="https://fonts.cdnfonts.com/css/comic-sans-ms" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="styles.css?v=2.0" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reily Fisher - Social Links</title>
+    <style>
+        /* Body and general styling for desktop */
+        body {
+            font-family: 'Comic Sans MS','Comic Sans', sans-serif; /* Default font for desktop */
+            margin: 0;
+            padding: 0;
+            font-size: 22px;
+            background-image: url('images/background.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            transition: background-image 1s ease;
+        }
+
+        /* Fullscreen intro section */
+        #intro {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: url('images/intro-photo.png');
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+            opacity: 1;
+            transition: opacity 1s ease;
+            padding: 20px;
+        }
+
+        /* Heartbeat logo */
+        .heartbeat-logo {
+            position: absolute;
+            z-index: 2;
+            transition: opacity 1s ease;
+        }
+
+        .heartbeat-logo img {
+            height: auto;
+        }
+
+        #content {
+            position: relative;
+            z-index: 2;
+            margin-top: 100vh;
+            padding: 20px;
+            text-align: center;
+            opacity: 1;
+            transition: opacity 1s ease;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 100%;
+            padding: 20px;
+        }
+
+        .latest-release-section h2 {
+            font-family: 'Comic Sans MS','Comic Sans', sans-serif;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .latest-release-section img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .latest-release-section a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: rgba(74, 118, 158, 0.82);
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .latest-release-section a:hover {
+            background-color: rgba(57, 90, 120, 0.82);
+        }
+
+        .columns {
+            display: flex;
+            justify-content: center;
+            gap: 100px;
+            margin-top: 40px;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .column h3 {
+            font-family: 'Comic Sans MS','Comic Sans', sans-serif;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .column a {
+            display: inline-block;
+            margin: 15px 0;
+            width: 50px;
+            height: 50px;
+            padding: 0;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .column a img {
+            width: 100%;
+            height: auto;
+        }
+
+        .column a:hover {
+            opacity: 0.8;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        /* Navigation Bar Styling */
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.4);
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px 20px;
+            z-index: 100;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin-right: 40px;
+        }
+
+        .nav-links li {
+            display: inline;
+        }
+
+        .nav-links a img {
+            width: 38px;
+            height: auto;
+            vertical-align: middle;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        /* Media queries for mobile */
+        @media (max-width: 768px) {
+            /* Change font to Roboto for mobile */
+            body {
+                font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+                font-size: 18px;
+            }
+            
+            .latest-release-section h2, .column h3 {
+                font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            }
+
+            /* Adjust intro section for mobile */
+            #intro {
+                background-size: 100%;
+                background-position: center;
+                height: 100vh;
+                display: flex;
+                justify-content: center; /* Center the content horizontally */
+                align-items: center;     /* Center the content vertically */
+
+            }
+            .heartbeat-logo {
+                position: relative; /* Change positioning to relative for centering */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: rgba(255, 255, 255, 0.08); /* Semi-transparent white oval */
+                padding: 10px 30px; /* Adjust padding to create an oval shape */
+                border-radius: 50px; /* Make the background oval-shaped */
+            }
+
+
+            .heartbeat-logo img {
+                width: 25vw; /* Adjust logo size for mobile */
+            }
+
+            /* Stack the columns vertically for mobile */
+            .columns {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            .latest-release-section h2 {
+                font-size: 1.5em;
+            }
+
+            /* Adjust right margin for mobile */
+            .top-nav {
+                padding-right: 10px; /* Make sure the logos align to the right */
+                justify-content: center;
+            }
+
+            .nav-links {
+                gap: 10px; /* Reduce gap for mobile */
+                margin-right: 0; /* Remove excess right margin */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <ul class="nav-links">
+            <li><a href="https://open.spotify.com/artist/4v0TEcF4RlqUlF5NQm6zFQ?si=sw4LBaMQSI-o2AcVyGgGcA" target="_blank"><img src="logos/spotify-logo.png" alt="Spotify"></a></li>
+            <li><a href="https://music.apple.com/us/artist/reily-fisher/1773505825" target="_blank"><img src="logos/apple-logo.png" alt="Apple Music"></a></li>
+            <li><a href="https://youtube.com/@reilyfisha?si=Zxoa28lk3S_sG-kP" target="_blank"><img src="logos/youtube-logo.png" alt="YouTube"></a></li>
+            <li><a href="https://www.tiktok.com/@reilyfisher?is_from_webapp=1&sender_device=pc" target="_blank"><img src="logos/tiktok-logo.png" alt="TikTok"></a></li>
+            <li><a href="https://www.instagram.com/reilyfisha/" target="_blank"><img src="logos/instagram-logo.png" alt="Instagram"></a></li>
+        </ul>
+    </nav>
+
+    <!-- Fullscreen intro section with the logo -->
+    <div id="intro">
+        <div class="heartbeat-logo">
+            <img src="logos/heartbeat-logo.png" alt="Heartbeat Logo">
+        </div>
+    </div>
+
+    <!-- Content that appears after scrolling down -->
+    <div id="content">
+        <div class="container latest-release-section">
+            <h2>Latest release | Got me Trippin</h2>
+            <img src="images/latest-release.jpg" alt="Latest Release">
+            <br>
+            <a href="#" target="_blank">Listen Now</a>
+        </div>
+
+        <!-- Two columns: Listen and Socials -->
+        <div class="columns">
+            <div class="column">
+                <h3>Listen:</h3>
+                <a href="https://open.spotify.com/artist/4v0TEcF4RlqUlF5NQm6zFQ?si=sw4LBaMQSI-o2AcVyGgGcA" target="_blank">
+                    <img src="logos/spotify-logo.png" alt="Spotify">
+                </a>
+                <a href="https://music.apple.com/us/artist/reily-fisher/1773505825" target="_blank">
+                    <img src="logos/apple-logo.png" alt="Apple Music">
+                </a>
+                <a href="https://music.youtube.com/" target="_blank">
+                    <img src="logos/youtube-logo.png" alt="YouTube Music">
+                </a>
+                <a href="https://music.amazon.com/" target="_blank">
+                    <img src="logos/amazon-logo.png" alt="Amazon Music">
+                </a>
+                <a href="https://www.pandora.com/" target="_blank">
+                    <img src="logos/pandora-logo.png" alt="Pandora">
+                </a>
+            </div>
+
+            <div class="column">
+                <h3>Socials:</h3>
+                <a href="https://www.instagram.com/reilyfisha/" target="_blank">
+                    <img src="logos/instagram-logo.png" alt="Instagram">
+                </a>
+                <a href="https://www.tiktok.com/@reilyfisher?is_from_webapp=1&sender_device=pc" target="_blank">
+                    <img src="logos/tiktok-logo.png" alt="TikTok">
+                </a>
+                <a href="https://youtube.com/@reilyfisha?si=Zxoa28lk3S_sG-kP" target="_blank">
+                    <img src="logos/youtube-logo.png" alt="YouTube">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Reily Fisher. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript to handle dynamic resizing and scrolling fade effect -->
+    <script>
+        function adjustLogoAndIntro() {
+            const heartbeatLogo = document.querySelector('.heartbeat-logo img');
+            const introSection = document.getElementById('intro');
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+
+            heartbeatLogo.style.width = windowWidth * 0.2 + 'px';
+            heartbeatLogo.parentNode.style.top = windowHeight * 0.25 + 'px';
+            heartbeatLogo.parentNode.style.right = windowWidth * 0.05 + 'px';
+
+            introSection.style.height = windowHeight + 'px';
+        }
+
+        function handleScrollFade() {
+            const scrollPosition = window.scrollY;
+            const introSection = document.getElementById('intro');
+            const heartbeatLogo = document.querySelector('.heartbeat-logo');
+            const windowHeight = window.innerHeight;
+
+            const fadeOutEffect = 1 - (scrollPosition / (windowHeight / 4)) * 0.9;
+
+            introSection.style.opacity = fadeOutEffect > 0.1 ? fadeOutEffect : 0.1;
+            heartbeatLogo.style.opacity = fadeOutEffect > 0.1 ? fadeOutEffect : 0;
+        }
+
+        window.addEventListener('resize', adjustLogoAndIntro);
+        window.addEventListener('scroll', handleScrollFade);
+
+        adjustLogoAndIntro();
+        handleScrollFade();
+    </script>
+
+</body>
+</html>
+

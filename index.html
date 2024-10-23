@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reily Fisher - Social Links</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+        /* Body and general styling */
+        body {
+            font-family: 'Lobster', cursive;
+            margin: 0;
+            padding: 0;
+            font-size: 22px;
+            background-image: url('images/background.webp'); /* This is the current background */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+            transition: background-image 1s ease;
+        }
+
+        /* Fullscreen intro section with stagnant background */
+        #intro {
+            position: fixed; /* Keep the intro section fixed */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: url('images/intro-photo.png'); /* Initial full-screen photo */
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+            display: flex;
+            justify-content: flex-end; /* Align logo to top-right */
+            align-items: flex-start;
+            opacity: 1; /* Full opacity initially */
+            transition: opacity 1s ease; /* Smooth fade-out */
+            padding: 20px; /* Add padding to create space for logo */
+        }
+
+        /* Logo inside the intro section, aligned top-right */
+        .heartbeat-logo {
+            position: absolute;
+            top: 200px; /* Top margin of 200px */
+            right: 200px; /* Right margin of 200px */
+            z-index: 2;
+            transition: opacity 1s ease; /* Smooth fade-out */
+        }
+
+        .heartbeat-logo img {
+            width: 450px; /* 1.5 times the original size */
+            height: auto;
+        }
+
+        /* Content that starts below the intro */
+        #content {
+            position: relative;
+            z-index: 2;
+            margin-top: 100vh; /* Start content after the full-screen intro */
+            padding: 20px;
+            text-align: center;
+            opacity: 1;
+            transition: opacity 1s ease;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 100%; /* Ensure content doesn’t overflow on small screens */
+            padding: 20px;
+        }
+
+        /* Styling for the "Latest Release" section */
+        .latest-release-section {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .latest-release-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .latest-release-section img {
+            width: 300px; /* Image size */
+            height: auto;
+            border-radius: 10px; /* Optional rounded corners */
+        }
+
+        .latest-release-section a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: rgba(74, 118, 158, 0.82); /* Navy blue background for all buttons */
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .latest-release-section a:hover {
+            background-color: rgba(57, 90, 120, 0.82); /* Lighter navy blue on hover */
+        }
+
+        /* Two-column layout for Listen and Socials sections */
+        .columns {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 40px;
+        }
+
+        .column {
+            flex: 1;
+            text-align: center;
+        }
+
+        .column h3 {
+            font-family: 'Lobster', cursive; /* New font for these headings */
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .column a {
+            display: flex;
+            justify-content: center; /* Center the logo and text horizontally */
+            align-items: center; /* Center the logo and text vertically */
+            margin: 15px auto;
+            width: 200px;
+            padding: 8px 10px; /* Keep the current padding */
+            background-color: rgba(74, 118, 158, 0.82); /* Navy blue background for all buttons */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-size: 1em;
+            line-height: 1; /* Ensure content stays within the button */
+        }
+        .column a:hover {
+            background-color: #395A78; /* Lighter navy blue on hover */
+        }
+
+        .column a img {
+            width: 35px; /* Set the width to fit inside the current button height */
+            height: 35px; /* Keep the height equal to the width to maintain the square aspect ratio */
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+
+        footer {
+            margin-top: 40px;
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        /* Navigation Bar Styling */
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.4); /* White background */
+            display: flex;
+            justify-content: flex-end; /* Aligns the links to the right */
+            padding: 10px 20px;
+            z-index: 100; /* Make sure the navbar stays on top */
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px; /* Spacing between links */
+            margin-right: 200px;
+        }
+
+        .nav-links li {
+            display: inline;
+        }
+
+        .nav-links a img {
+            width: 30px; /* Logo size */
+            height: auto;
+            vertical-align: middle;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8; /* Slight hover effect */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Add this navigation bar at the top of the body -->
+    <nav class="top-nav">
+        <ul class="nav-links">
+            <li><a href="https://open.spotify.com/artist/4v0TEcF4RlqUlF5NQm6zFQ?si=sw4LBaMQSI-o2AcVyGgGcA" target="_blank"><img src="logos/spotify-logo.png" alt="Spotify"></a></li>
+            <li><a href="https://music.apple.com/us/artist/reily-fisher/1773505825" target="_blank"><img src="logos/apple-logo.png" alt="Apple Music"></a></li>
+            <li><a href="https://youtube.com/@reilyfisha?si=Zxoa28lk3S_sG-kP" target="_blank"><img src="logos/youtube-logo.png" alt="YouTube"></a></li>
+            <li><a href="https://www.tiktok.com/@reilyfisher?is_from_webapp=1&sender_device=pc" target="_blank"><img src="logos/tiktok-logo.png" alt="TikTok"></a></li>
+            <li><a href="https://www.instagram.com/reilyfisha/" target="_blank"><img src="logos/instagram-logo.png" alt="Instagram"></a></li>
+        </ul>
+    </nav>
+
+    <!-- Fullscreen intro section with the logo -->
+    <div id="intro">
+        <div class="heartbeat-logo">
+            <img src="logos/heartbeat-logo.png" alt="Heartbeat Logo">
+        </div>
+    </div>
+
+    <!-- Content that appears after scrolling down -->
+    <div id="content">
+        <div class="container latest-release-section">
+            <h2>Latest release | Got me Trippin</h2>
+            <img src="images/latest-release.jpg" alt="Latest Release">
+            <br>
+            <a href="#" target="_blank">Listen Now</a> <!-- Add your link for listening here -->
+        </div>
+
+        <!-- Two columns: Listen and Socials -->
+        <div class="columns">
+            <!-- Left Column: Listen -->
+            <div class="column">
+                <h3>Listen:</h3>
+                <a href="https://open.spotify.com/artist/4v0TEcF4RlqUlF5NQm6zFQ?si=sw4LBaMQSI-o2AcVyGgGcA" target="_blank">
+                    <img src="logos/spotify-logo.png" alt="Spotify" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;">Spotify
+                </a>
+                <a href="https://music.apple.com/us/artist/reily-fisher/1773505825" target="_blank">
+                    <img src="logos/apple-logo.png" alt="Apple Music" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;">Apple Music
+                </a>
+                <a href="https://music.youtube.com/" target="_blank">
+                    <img src="logos/youtube-logo.png" alt="YouTube Music" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;">YouTube Music
+                </a>
+                <a href="https://music.amazon.com/" target="_blank">
+                    <img src="logos/amazon-logo.png" alt="Amazon Music" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;">Amazon Music
+                </a>
+                <a href="https://www.pandora.com/" target="_blank">
+                    <img src="logos/pandora-logo.png" alt="Pandora" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;">Pandora
+                </a>
+            </div>
+        
+            <!-- Right Column: Socials -->
+            <div class="column">
+                <h3>Socials:</h3>
+                <a href="https://www.instagram.com/reilyfisha/" target="_blank">
+                    <img src="logos/instagram-logo.png" alt="Instagram" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;">Instagram
+                </a>
+                <a href="https://www.tiktok.com/@reilyfisher?is_from_webapp=1&sender_device=pc" target="_blank">
+                    <img src="logos/tiktok-logo.png" alt="TikTok" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;">TikTok
+                </a>
+                <a href="https://youtube.com/@reilyfisha?si=Zxoa28lk3S_sG-kP" target="_blank">
+                    <img src="logos/youtube-logo.png" alt="YouTube" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;">YouTube
+                </a>
+            </div>
+        </div>
+            </div>
+
+    <footer>
+        <p>© 2024 Reily Fisher. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript to handle the scroll and fade effect -->
+    <script>
+        window.addEventListener('scroll', function () {
+            const scrollPosition = window.scrollY;
+            const introSection = document.getElementById('intro');
+            const heartbeatLogo = document.querySelector('.heartbeat-logo'); // Select the logo
+            const windowHeight = window.innerHeight;
+
+            // Adjust to make the opacity reach 10% after scrolling a quarter of the way down
+            const fadeOutEffect = 1 - (scrollPosition / (windowHeight / 4)) * 0.9;
+            
+            // Apply fade-out effect to both the intro background and the logo
+            introSection.style.opacity = fadeOutEffect > 0.1 ? fadeOutEffect : 0.1; // Minimum opacity at 10%
+            heartbeatLogo.style.opacity = fadeOutEffect > 0.1 ? fadeOutEffect : 0; // Fade logo to 0
+        });
+    </script>
+    
+</body>
+</html>
