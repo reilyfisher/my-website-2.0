@@ -216,7 +216,7 @@
                 transform: translateX(-50%); /* Center by moving left by half its width */
                 width: 60vw; /* Set the width to 60% of the viewport width */
                 z-index: 999; /* Keep it above other elements */
-                background: rgba(255, 255, 255, 0.12); /* Semi-transparent white oval */
+                background: rgba(255, 255, 255, 0.25); /* Semi-transparent white oval */
                 padding: 10px 20px; /* Create padding for the oval shape */
                 border-radius: 50px; /* Make the background oval-shaped */
 
@@ -359,7 +359,7 @@
             const windowWidth = window.innerWidth;
             const windowHeight = window.innerHeight;
 
-            heartbeatLogo.parentNode.style.top = windowHeight * 0.60 + 'px';
+            heartbeatLogo.parentNode.style.top = windowHeight * 0.25 + 'px';
             heartbeatLogo.parentNode.style.right = windowWidth * 0.05 + 'px';
 
             introSection.style.height = windowHeight + 'px';
