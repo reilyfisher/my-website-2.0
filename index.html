@@ -127,18 +127,18 @@
             display: flex;
             align-items: center;
             margin: 15px 0;
-            width: auto;
-            height: 50px;
-            padding: 10px 20px;
+            padding: 8px 15px; /* Reduced padding for a smaller height */
             text-decoration: none;
             background-color: rgba(74, 118, 158, 0.82);
             color: white;
             border-radius: 5px;
             transition: opacity 0.3s ease;
+            height: auto; /* Remove fixed height to allow padding to determine the size */
+            font-family: 'Comic Sans MS', 'Comic Sans', sans-serif; /* Apply Comic Sans font */
         }
-
+        
         .column a img {
-            width: 30px;
+            width: 24px; /* Slightly smaller logo size */
             height: auto;
             margin-right: 10px;
         }
@@ -205,19 +205,24 @@
                 background-position: center;
                 height: 100vh;
                 display: flex;
-                justify-content: center; /* Center the content horizontally */
+                justify-content: center; /* Center horizontally */
                 align-items: center;     /* Center the content vertically */
             }
         
             .heartbeat-logo {
-                position: absolute;
+                position: fixed; /* Make the logo fixed relative to the screen */
+                top: 70px; /* Set distance of 70px from the top of the viewport */
+                left: 50%; /* Center horizontally relative to the screen */
+                transform: translateX(-50%); /* Move horizontally to the center */
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 background: rgba(255, 255, 255, 0.12); /* More visible transparent white oval */
                 padding: 15px 40px; /* Adjust padding to create an oval shape */
                 border-radius: 50px; /* Make the background oval-shaped */
+                z-index: 999; /* Ensure the logo stays above other elements */
             }
+        
             .heartbeat-logo img {
                 width: 50vw; /* Significantly larger logo */
             }
