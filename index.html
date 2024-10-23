@@ -210,27 +210,25 @@
             }
         
             .heartbeat-logo {
-                position: fixed; /* Fixed positioning relative to the screen */
-                top: 95px; /* Distance from the top of the screen */
-                left: 50%; /* Center horizontally relative to the screen */
-                transform: translateX(-50%); /* Move horizontally to the center */
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 200px; /* Set a larger width for the container */
-                height:70px;
-                max-width: 350px; /* Limit the maximum width to prevent excessive size */
-                background: rgba(255, 255, 255, 0.12); /* Semi-transparent white oval */
-                padding: 1px 1px; /* Increased padding for larger oval */
-                border-radius: 50px; /* Make the background oval-shaped */
-                z-index: 999; /* Ensure the logo stays above other elements */
-            }
+            position: fixed;
+            top: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 300px; /* Set a fixed width */
+            height: 150px; /* Set a fixed height */
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 50px;
+            z-index: 999;
+            padding: 0; /* Remove padding to focus on width/height of container */
+        }
         
-            .heartbeat-logo img {
-                width: 100%; /* Make the image fill the container width */
-                max-width: 300px; /* Set a maximum width for the image */
-                height: auto; /* Maintain aspect ratio */
-            }
+        .heartbeat-logo img {
+            width: 200px; /* Set a larger fixed width for the logo image */
+            height: auto; /* Maintain aspect ratio */
+        }
         
             /* Stack the columns vertically for mobile */
             .columns {
